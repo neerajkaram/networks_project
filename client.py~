@@ -1,5 +1,7 @@
 '''Write a sockets program in which a client and server communicate point-to-point using UDP. N clients should be able to talk to a single server, and a single client should be able to talk to M servers'''
 
+''' Extend (a) to a window-base protocol. You should be able to progress from stopand-wait
+(window size = 1) to a window size =W.'''
 import socket
 import sys
 
@@ -34,4 +36,7 @@ for p  in sockets.keys():
 	for  num_msg in sockets.keys(): #  in sockets.keys:
 		sockets[p].sendto(msg, (server_ip,int(p)))
 		sockets[p].sendto(str(seq), (server_ip,int(p)))
+		print "message sent"
+		#ack=sockets[p].recvfrom(1024)
+		print "ack recived " #+ack
 	#sockets[p].sendto("1", (server_ip,int(p)))
