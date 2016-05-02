@@ -47,7 +47,7 @@ while (messages):
         sock.sendto(json.dumps(msg), (UDP_IP, CONSTANTS.UDP_CHANNEL_PORT))
 
 
-    # time.sleep(5)
+    time.sleep(4)
     input = [sock]
 
     # inputready,outputready,exceptready = select.select(input,[],[])
